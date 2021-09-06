@@ -13,7 +13,6 @@ outlet = StreamOutlet(info)
 box = RTBox(host_clock = local_clock)
 box.clockRatio() # measure and apply clock offset
 
-
 for i in range(N_TRIALS):
 
 	# send a TTL pulse, get send time
@@ -24,3 +23,6 @@ for i in range(N_TRIALS):
 
 	# wait until next event
 	sleep(3*random())
+	print('Trial: %d/%d'%(i, N_TRIALS))
+
+box.close()
